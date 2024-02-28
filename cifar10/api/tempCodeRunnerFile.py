@@ -1,0 +1,3 @@
+
+    result = predict()
+    print(result)
