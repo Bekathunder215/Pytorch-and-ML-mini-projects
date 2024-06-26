@@ -4,5 +4,6 @@
 
 
 # Folders
-./test/**
+# /test/**/
+/testfolder/
 /Mnist/aivenv/
