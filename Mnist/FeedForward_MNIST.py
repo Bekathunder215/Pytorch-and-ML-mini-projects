@@ -5,13 +5,19 @@ import torchvision.transforms as transforms
 import matplotlib.pyplot as plt
 
 #device config
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+if torch.backends.mps.is_available():
+    mps_device = torch.device("mps")
+    x = torch.ones(1, device=mps_device)
+    print (x)
+else:
+    print ("MPS device not found.")
+device = torch.device("mps" if torch.cuda.is_available() else "cpu")
 
 #hyper parameters
 input_size = 784 #28*28 -> 1d tensor
 hidden_size = 100
 num_classes = 10
-num_epochs = 2
+num_epochs = 5
 batch_size = 100
 learning_rate = 0.001
 
